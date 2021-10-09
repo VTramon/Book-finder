@@ -1,10 +1,13 @@
-import styled from 'styled-components'
-
-const Title = styled.h1`
-  color: red;
-  font-size: 50px;
-`
+import { ThemeProvider } from 'styled-components';
+import GLobalStyle from '../../Globalstyles';
+import Layout from '../components/Layout';
+import Theme from '../components/Theme';
 
 export default function Home() {
-  return <Title>My page</Title>
+  return (
+    <ThemeProvider theme={Theme}>
+      <GLobalStyle />
+      <Layout />
+    </ThemeProvider>
+  );
 }
