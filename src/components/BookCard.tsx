@@ -1,15 +1,20 @@
 import styled from 'styled-components';
+import Image from 'next/image';
+import NoImage from '../../public/images/Noimage.jpg';
 
 const Card = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   width: 300px;
   height: 300px;
   background-color: inherit;
-  margin: 20px;
+  margin: 30px;
   padding: 15px;
   border: 1px solid black;
   overflow: hidden;
+  border-radius: 5px;
 `;
 
 const Img = styled.img`
@@ -17,6 +22,15 @@ const Img = styled.img`
   width: 190px;
   height: 130px;
   margin: 10px;
+`;
+
+const ImgNext = styled.div`
+  display: block;
+  object-fit: cover;
+  width: 190px;
+  height: 130px;
+  margin: 10px;
+  padding: 15px;
 `;
 
 const Title = styled.div`
@@ -73,11 +87,20 @@ const BookCard: React.FC<BookCardProps> = (props) => {
           <Text>{props.book.volumeInfo.authors}</Text>
         </Authors>
       )}
-      {props.book.volumeInfo.imageLinks !== undefined && (
+      {props.book.volumeInfo.imageLinks ? (
         <Img
           src={props.book.volumeInfo.imageLinks.thumbnail}
           alt={props.book.volumeInfo.title}
         />
+      ) : (
+        <ImgNext>
+          <Image
+            src={NoImage}
+            alt="imagem não encontrada"
+            layout="responsive"
+            key={props.id}
+          />
+        </ImgNext>
       )}
     </Card>
   );

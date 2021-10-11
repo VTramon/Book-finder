@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import api from '../services/api';
 import BookCard from './BookCard';
+import Footer from './Footer';
 import Header from './Header';
 
 const Content = styled.div`
@@ -11,6 +12,8 @@ const Content = styled.div`
   max-height: 100vh;
   width: 100vw;
   height: 100vh;
+  justify-content: space-between;
+  background-color: ${(props) => props.theme.colors.backgroundLayout}; ;
 `;
 
 const BookContainer = styled.div`
@@ -64,6 +67,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
             return <BookCard book={book} id={props.id} />;
           })}
       </BookContainer>
+      <Footer />
     </Content>
   );
 };
