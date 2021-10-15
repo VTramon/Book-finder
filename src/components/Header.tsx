@@ -1,7 +1,7 @@
-import { FormEvent, useCallback, useState } from 'react';
-import styled from 'styled-components';
+import { FormEvent, useCallback, useState } from "react";
+import styled from "styled-components";
 
-const Box = styled.div`
+const Box = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +36,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ callbackSearch }) => {
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const handleSubmit = useCallback(
     async (event: FormEvent) => {
       event.preventDefault();

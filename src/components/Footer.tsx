@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { GitIcon, LinkedinIcon } from './Icons';
+import styled from "styled-components";
+import { GitIcon, LinkedinIcon } from "./Icons";
 
-const FooterBar = styled.div`
+const FooterBar = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,10 +43,7 @@ const Footer = () => {
       </Medias>
       <About>
         <h4>About</h4>
-        <h6>
-          this is a book finder that uses the google's API to search books in
-          the store
-        </h6>
+        <h6>this is a book finder that uses the google's API</h6>
       </About>
     </FooterBar>
   );

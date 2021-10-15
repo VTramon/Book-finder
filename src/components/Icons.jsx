@@ -1,4 +1,4 @@
-export let GitIcon = ({ height, width }) => {
+export const GitIcon = ({ height, width }) => {
   return (
     <svg viewBox="0 0 128 128" height={height} width={width}>
       <g fill="#181616">
