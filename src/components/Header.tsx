@@ -7,7 +7,8 @@ const Box = styled.header`
   align-items: center;
   height: 10vh;
   width: 100vw;
-  background-color: ${(props) => props.theme.colors.backgroundHeader};
+  background-color: inherit;
+  border-bottom: 1px solid #9e9e9e;
 `;
 
 const SearchForm = styled.form`

@@ -7,4 +7,4 @@ export default {
     backgroundLayout: '#F5FDFF',
     backgrounInput: '#E0E0E0'
   }
-};
+}

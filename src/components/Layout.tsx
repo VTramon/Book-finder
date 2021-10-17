@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useState } from "react";
-import styled from "styled-components";
-import api from "../services/api";
-import BookCard from "./BookCard";
-import Footer from "./Footer";
-import Header from "./Header";
+import { useCallback, useEffect, useState } from 'react'
+import styled from 'styled-components'
+import api from '../services/api'
+import BookCard, { BookCardProps } from './BookCard'
+import Footer from './Footer'
+import Header from './Header'
 
 const Content = styled.main`
   display: flex;
@@ -14,7 +14,7 @@ const Content = styled.main`
   height: 100vh;
   justify-content: space-between;
   background-color: ${(props) => props.theme.colors.backgroundLayout}; ;
-`;
+`
 
 const BookContainer = styled.div`
   display: flex;
@@ -23,40 +23,40 @@ const BookContainer = styled.div`
   max-height: auto;
   width: 100vw;
   flex-wrap: wrap;
-`;
+`
 
-interface LayoutProps {
-  id: string;
+interface LayoutProps extends BookCardProps {
+  id: string
   volumeInfo: {
-    title: string;
-    authors: string[];
-    description: string;
+    title: string
+    authors: string[]
+    description: string
     imageLinks: {
-      thumbnail: string;
-    };
-  };
+      thumbnail: string
+    }
+  }
   saleInfo: {
-    buyLink: string;
-  };
+    buyLink: string
+  }
 }
 
 const Layout: React.FC<LayoutProps> = (props) => {
-  const [search, setSearch] = useState("");
-  const [books, setBooks] = useState<LayoutProps[]>([]);
+  const [search, setSearch] = useState('')
+  const [books, setBooks] = useState<LayoutProps[]>([])
 
   const handleGetBooks = useCallback(async () => {
     await api.get(`${search}`).then((response) => {
       if (response.status === 200) {
-        setBooks(response.data["items"]);
-        return;
+        // eslint-disable-next-line dot-notation
+        setBooks(response.data['items'])
       }
-    });
-  }, [search]);
+    })
+  }, [search])
 
   useEffect(() => {
-    if (search.length === 0) return;
-    handleGetBooks();
-  }, [search, handleGetBooks]);
+    if (search.length === 0) return
+    handleGetBooks()
+  }, [search, handleGetBooks])
 
   return (
     <Content>
@@ -64,12 +64,12 @@ const Layout: React.FC<LayoutProps> = (props) => {
       <BookContainer>
         {!!books &&
           books.map((book) => {
-            return <BookCard book={book} id={props.id} />;
+            return <BookCard book={book} key={props.id} id={props.id} />
           })}
       </BookContainer>
       <Footer />
     </Content>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout
