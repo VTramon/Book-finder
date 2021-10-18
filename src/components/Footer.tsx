@@ -35,10 +35,13 @@ const Footer = () => {
   return (
     <FooterBar>
       <Medias>
-        <Link>
+        <Link
+          href="https://www.linkedin.com/in/vitor-ramon-543256163/"
+          target="_blank"
+        >
           <LinkedinIcon height={40} width={40} />
         </Link>
-        <Link>
+        <Link href="https://github.com/VTramon" target="_blank">
           <GitIcon height={40} width={40} />
         </Link>
       </Medias>
