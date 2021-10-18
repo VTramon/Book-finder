@@ -2,9 +2,9 @@ export default {
   title: 'theme',
 
   colors: {
-    backgroundHeader: '#ffea00',
-    backgroundFooter: '#ffea00',
-    backgroundLayout: '#ff8c0d',
+    backgroundHeader: '#93B4DB',
+    backgroundFooter: '#93B4DB',
+    backgroundLayout: '#DOE4AE',
     backgroundInput: '#E0E0E0'
   }
 }
