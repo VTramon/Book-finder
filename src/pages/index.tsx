@@ -1,9 +1,9 @@
-import { ThemeProvider } from 'styled-components';
-import GLobalStyle from '../../Globalstyles';
-import Layout from '../components/Layout';
-import Theme from '../Theme';
+import { ThemeProvider } from 'styled-components'
+import GLobalStyle from '../../Globalstyles'
+import Layout from '../components/Layout'
+import Theme from '../Theme'
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <ThemeProvider theme={Theme}>
       <GLobalStyle />
@@ -20,7 +20,18 @@ export default function Home() {
         saleInfo={{
           buyLink: ''
         }}
+        book={{
+          volumeInfo: {
+            title: '',
+            authors: [''],
+            imageLinks: {
+              thumbnail: ''
+            }
+          }
+        }}
       />
     </ThemeProvider>
-  );
+  )
 }
+
+export default Home

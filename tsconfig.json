@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["components/*"]
+    },
     "target": "esnext",
     "module": "esnext",
     "jsx": "preserve",
@@ -21,5 +25,12 @@
     "isolatedModules": true
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/services/api.js"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "./jest.setup.ts"
+  ]
 }

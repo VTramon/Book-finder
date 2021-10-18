@@ -1,5 +1,5 @@
-import { FormEvent, useCallback, useState } from "react";
-import styled from "styled-components";
+import { FormEvent, useCallback, useState } from 'react'
+import styled from 'styled-components'
 
 const Box = styled.header`
   display: flex;
@@ -7,19 +7,19 @@ const Box = styled.header`
   align-items: center;
   height: 10vh;
   width: 100vw;
-  background-color: inherit;
+  background-color: ${(props) => props.theme.colors.backgroundFooter};
   border-bottom: 1px solid #9e9e9e;
-`;
+`
 
 const SearchForm = styled.form`
   display: flex;
   width: 45vw;
   height: 30px;
   border-radius: 5px;
-  background-color: ${(props) => props.theme.colors.backgrounInput};
+  background-color: ${(props) => props.theme.colors.backgroundInput};
   border-bottom: 1px solid black;
   border-right: 1px solid black;
-`;
+`
 
 const SearchInput = styled.input`
   display: inherit;
@@ -30,22 +30,22 @@ const SearchInput = styled.input`
   border-bottom: inherit;
   border-right: inherit;
   padding: 5px;
-`;
+`
 
 interface HeaderProps {
-  callbackSearch: Function;
+  callbackSearch: Function
 }
 
 const Header: React.FC<HeaderProps> = ({ callbackSearch }) => {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('')
   const handleSubmit = useCallback(
     async (event: FormEvent) => {
-      event.preventDefault();
-      callbackSearch(search);
-      return;
+      event.preventDefault()
+      callbackSearch(search)
+      return
     },
     [search, callbackSearch]
-  );
+  )
 
   return (
     <Box>
@@ -58,7 +58,7 @@ const Header: React.FC<HeaderProps> = ({ callbackSearch }) => {
         />
       </SearchForm>
     </Box>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

@@ -1,18 +1,26 @@
 module.exports = {
-  roots: ['<rootDir>'],
-  testEnvironment: 'jsdom',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
-  testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next)[/\\\\]'],
-  transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
-  transform: {
-    '^.+\\.(ts|tsx)$': 'babel-jest'
-  },
-  watchPlugins: [
-    'jest-watch-typeahead/filename',
-    'jest-watch-typeahead/testname'
+  collectCoverageFrom: [
+    '**/*.{js,jsx,ts,tsx}',
+    '!**/*.d.ts',
+    '!**/node_modules/**'
   ],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   moduleNameMapper: {
-    '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
-    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__mocks__/fileMock.js'
-  }
+    '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
+    '^.+\\.(css|sass|scss)$': '<rootDir>/__mocks__/styleMock.js',
+    '^@/components/(.*)$': '<rootDir>/components/$1',
+    '^.+\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/__mocks__/fileMock.js'
+  },
+  testPathIgnorePatterns: [
+    '<rootDir>/node_modules/',
+    '<rootDir>/.next/',
+    '<rootDir>/__tests__/test-utils.tsx'
+  ],
+  testEnvironment: 'jsdom',
+  transform: {
+    /* Use babel-jest to transpile tests with the next/babel preset
+    https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object */
+    '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }]
+  },
+  transformIgnorePatterns: ['/node_modules/', '^.+\\.module\\.(css|sass|scss)$']
 }

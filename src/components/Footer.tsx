@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { GitIcon, LinkedinIcon } from "./Icons";
+import styled from 'styled-components'
+import { GitIcon, LinkedinIcon } from './Icons'
 
 const FooterBar = styled.footer`
   display: flex;
@@ -9,18 +9,19 @@ const FooterBar = styled.footer`
   width: 100vw;
   height: 100px;
   background-color: ${(props) => props.theme.colors.backgroundFooter};
-`;
+  border-top: 1px solid #9e9e9e;
+`
 
 const Link = styled.a`
   margin: 10px;
   :hover {
     cursor: pointer;
   }
-`;
+`
 
 const Medias = styled.div`
   margin: 20px;
-`;
+`
 
 const About = styled.div`
   margin: 20px;
@@ -28,7 +29,7 @@ const About = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
+`
 
 const Footer = () => {
   return (
@@ -46,7 +47,7 @@ const Footer = () => {
         <h6>this is a book finder that uses the google's API</h6>
       </About>
     </FooterBar>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

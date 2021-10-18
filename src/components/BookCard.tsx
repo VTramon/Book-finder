@@ -65,8 +65,8 @@ export interface BookCardProps {
   id?: string
   book: {
     volumeInfo: {
-      title: string
-      authors: string[]
+      title?: string
+      authors?: string[]
       imageLinks: {
         thumbnail?: string
       }
@@ -78,7 +78,7 @@ const BookCard: React.FC<BookCardProps> = (props) => {
   return (
     <>
       {props.book.volumeInfo.imageLinks && props.book.volumeInfo.authors ? (
-        <Card key={`${props.id}+card`}>
+        <Card key={`${props.id}+card`} role="bookcard">
           <Title key={`${props.id}+title`}>
             <Text key={`${props.id}+titleText`}>
               {props.book.volumeInfo.title}

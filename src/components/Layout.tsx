@@ -25,7 +25,7 @@ const BookContainer = styled.div`
   flex-wrap: wrap;
 `
 
-interface LayoutProps extends BookCardProps {
+export interface LayoutProps extends BookCardProps {
   id: string
   volumeInfo: {
     title: string
