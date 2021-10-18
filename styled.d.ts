@@ -8,6 +8,7 @@ declare module 'styled-components' {
       backgroundHeader: string
       backgroundFooter: string
       backgroundLayout: string
+      backgroundCard: string
       backgroundInput: string
     }
   }

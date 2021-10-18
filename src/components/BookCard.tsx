@@ -9,7 +9,7 @@ const Card = styled.div`
   align-items: center;
   width: 300px;
   height: 300px;
-  background-color: inherit;
+  background-color: ${(props) => props.theme.colors.backgroundCard};
   margin: 30px;
   padding: 15px;
   border: 1px solid black;
