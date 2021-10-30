@@ -1,34 +1,30 @@
-# TypeScript & Styled Components Next.js example
+# Book Finder
 
-This is a really simple project that show the usage of Next.js with TypeScript and Styled Components.
+um projeto simples que eu criei para colocar algumas coisas em prática
 
-## Preview
+<img src="https://img.shields.io/static/v1?label=LICENSE&message=MIT&color=%3CCOLOR%3E&style=%3CSTYLE%3E&logo=%3CLOGO%3E" />   <img src="https://img.shields.io/static/v1?label=axios&message=0.22.0&color=%3CCOLOR%3E&style=%3CSTYLE%3E&logo=%3CLOGO%3E" />   <img src="https://img.shields.io/static/v1?label=styled-components&message=^5.2.3&color=%3CCOLOR%3E&style=%3CSTYLE%3E&logo=%3CLOGO%3E" />
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+## como usar
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-typescript-styled-components)
+* instruções de download
 
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript-styled-components&project-name=with-typescript-styled-components&repository-name=with-typescript-styled-components)
-
-## How to use it?
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-typescript-styled-components with-typescript-styled-components-app
-# or
-yarn create next-app --example with-typescript-styled-components with-typescript-styled-components-app
+```
+1. git clone https://github.com/VTramon/Book-finder.git
+```
+* Instale as dependencias e inicie o projeto em modo de desenvolvimento
+```
+2. yarn 
+3. yarn dev
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+#### OU
 
-## Notes
+```
+2. npm install 
+3. npm run dev
+```
 
-This is an amalgamation of the 2 existing examples:
+## Screenshots
 
-- [with-typescript](https://github.com/vercel/next.js/tree/canary/examples/with-typescript)
-- [with-styled-components](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components)
+![alt text](ScreenShots/Layout.jpg)
+![alt text](ScreenShots/exemplo.jpg)
