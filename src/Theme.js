@@ -2,10 +2,11 @@ export default {
   title: 'theme',
 
   colors: {
-    backgroundHeader: '#93B4DB',
-    backgroundFooter: '#93B4DB',
-    backgroundLayout: '#DOE4AE',
-    backgroundCard: '#BDD4EE',
-    backgroundInput: '#E0E0E0'
+    backgroundHeader: '#7E3616',
+    backgroundFooter: '#7E3616',
+    backgroundLayout: '#FEB432',
+    backgroundCard: '#F9E5DC',
+    backgroundInput: '#F9E5DC',
+    wordColor: '#0D0008'
   }
 }

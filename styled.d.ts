@@ -10,6 +10,7 @@ declare module 'styled-components' {
       backgroundLayout: string
       backgroundCard: string
       backgroundInput: string
+      wordColor: string
     }
   }
 }
