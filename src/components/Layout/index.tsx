@@ -1,44 +1,10 @@
 import { useCallback, useEffect, useState } from 'react'
-import styled from 'styled-components'
-import api from '../services/api'
-import BookCard, { BookCardProps } from './BookCard'
-import Footer from './Footer'
-import Header from './Header'
-
-const Content = styled.main`
-  display: flex;
-  flex-direction: column;
-  max-width: 100vw;
-  max-height: 100vh;
-  width: 100vw;
-  height: 100vh;
-  justify-content: space-between;
-  background-color: ${(props) => props.theme.colors.backgroundLayout}; ;
-`
-
-const BookContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-height: auto;
-  width: 100vw;
-  flex-wrap: wrap;
-`
-
-export interface LayoutProps extends BookCardProps {
-  id: string
-  volumeInfo: {
-    title: string
-    authors: string[]
-    description: string
-    imageLinks: {
-      thumbnail: string
-    }
-  }
-  saleInfo: {
-    buyLink: string
-  }
-}
+import api from '../../services/api'
+import BookCard from '../BookCard'
+import Footer from '../Footer/Footer'
+import Header from '../Header'
+import { Content, BookContainer } from './styles'
+import { LayoutProps } from './types'
 
 const Layout: React.FC<LayoutProps> = (props) => {
   const [search, setSearch] = useState('')
