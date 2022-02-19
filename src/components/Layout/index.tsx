@@ -13,7 +13,6 @@ const Layout: React.FC<LayoutProps> = (props) => {
   const handleGetBooks = useCallback(async () => {
     await api.get(`${search}`).then((response) => {
       if (response.status === 200) {
-        // eslint-disable-next-line dot-notation
         setBooks(response.data['items'])
       }
     })
@@ -25,16 +24,18 @@ const Layout: React.FC<LayoutProps> = (props) => {
   }, [search, handleGetBooks])
 
   return (
-    <Content>
+    <>
       <Header callbackSearch={setSearch} />
-      <BookContainer>
-        {!!books &&
-          books.map((book) => {
-            return <BookCard book={book} key={props.id} id={props.id} />
-          })}
-      </BookContainer>
+      <Content>
+        <BookContainer>
+          {!!books &&
+            books.map((book) => {
+              return <BookCard book={book} key={props.id} id={props.id} />
+            })}
+        </BookContainer>
+      </Content>
       <Footer />
-    </Content>
+    </>
   )
 }
 

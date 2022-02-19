@@ -6,7 +6,8 @@ export const Content = styled.main`
   max-width: 100vw;
   max-height: 100vh;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  overflow-x: hidden;
   justify-content: space-between;
   background-color: ${(props) => props.theme.colors.backgroundLayout};
   color: ${(props) => props.theme.colors.wordColor};

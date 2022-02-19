@@ -3,7 +3,6 @@ export interface BookCardProps {
   book: {
     volumeInfo: {
       title?: string
-      authors?: string[]
       imageLinks: {
         thumbnail?: string
       }
