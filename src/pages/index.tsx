@@ -7,29 +7,7 @@ const Home: React.FC = () => {
   return (
     <ThemeProvider theme={Theme}>
       <GLobalStyle />
-      <Layout
-        id={''}
-        volumeInfo={{
-          title: '',
-          authors: [],
-          description: '',
-          imageLinks: {
-            thumbnail: ''
-          }
-        }}
-        saleInfo={{
-          buyLink: ''
-        }}
-        book={{
-          volumeInfo: {
-            title: '',
-            authors: [''],
-            imageLinks: {
-              thumbnail: ''
-            }
-          }
-        }}
-      />
+      <Layout />
     </ThemeProvider>
   )
 }

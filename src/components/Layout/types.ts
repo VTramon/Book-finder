@@ -1,16 +1,9 @@
-import { BookCardProps } from '../BookCard/interface'
-
-export interface LayoutProps extends BookCardProps {
+export interface LayoutProps {
   id: string
   volumeInfo: {
     title: string
-    authors: string[]
-    description: string
     imageLinks: {
       thumbnail: string
     }
-  }
-  saleInfo: {
-    buyLink: string
   }
 }

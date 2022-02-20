@@ -1,14 +1,10 @@
-import {
-  render,
-  screen,
-  getByTestId,
-  fireEvent,
-  getByRole
-} from '../test-utils'
+import { render, screen, getByTestId, getByRole } from '../test-utils'
 import '@testing-library/jest-dom'
+import userEvent from '@testing-library/user-event'
 import Home from '../../src/pages'
-import Header from '../../src/components/Header/Header'
+import Header from '../../src/components/Header'
 import Layout from '../../src/components/Layout'
+import { serialize } from 'v8'
 
 describe('rendering the home page', () => {
   test('rendering the Header', () => {
@@ -29,26 +25,29 @@ describe('rendering the home page', () => {
 })
 
 describe('testing header components', () => {
-  test('when set the on submit', () => {
-    render(<Header />)
+  test('when set the on submit', async () => {
+    const callbackSearch = jest.fn()
+    render(<Header callbackSearch={callbackSearch} />)
 
-    const input = screen.getByRole('textbox')
+    const input = screen.getByPlaceholderText('qual livro deseja buscar?')
 
-    fireEvent.change(input, { target: { value: 'trem' } })
+    userEvent.type(input, 'livros')
 
-    expect(input).toHaveAttribute('value', 'trem')
+    userEvent.type(input, '{enter}')
+
+    expect(input).toHaveAttribute('value', 'livros')
+    expect(callbackSearch).toBeCalled()
   })
 
   test('if the bookcards are returning', async () => {
-    render(<Layout handleSubmit={'trem'} />)
+    render(<Layout />)
+    const input = screen.getByPlaceholderText('qual livro deseja buscar?')
 
-    const input = screen.getByRole('textbox')
+    userEvent.type(input, 'trem')
+    userEvent.type(input, '{enter}')
 
-    fireEvent.change(input, { target: { value: 'trem' } })
-    fireEvent.submit(input, { event: { value: 'trem' } })
-
-    const card = await screen.findAllByRole('bookcard')
-
-    expect(card).toBeDefined()
+    const cardArr = await screen.findAllByTestId('cardBook')
+    const card = cardArr[1]
+    expect(card).toBeInTheDocument()
   })
 })

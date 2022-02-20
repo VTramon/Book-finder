@@ -6,7 +6,7 @@ import Header from '../Header'
 import { Content, BookContainer } from './styles'
 import { LayoutProps } from './types'
 
-const Layout: React.FC<LayoutProps> = (props) => {
+const Layout = () => {
   const [search, setSearch] = useState('')
   const [books, setBooks] = useState<LayoutProps[]>([])
 
@@ -29,8 +29,8 @@ const Layout: React.FC<LayoutProps> = (props) => {
       <Content>
         <BookContainer>
           {!!books &&
-            books.map((book) => {
-              return <BookCard book={book} key={props.id} id={props.id} />
+            books.map((book, index) => {
+              return <BookCard book={book} key={index} id={book.id} />
             })}
         </BookContainer>
       </Content>

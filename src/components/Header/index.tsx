@@ -15,8 +15,10 @@ const Header: React.FC<HeaderProps> = ({ callbackSearch }) => {
 
   return (
     <Box>
-      <SearchForm onSubmit={(e) => handleSubmit(e)}>
+      <SearchForm aria-label="headerForm" onSubmit={(e) => handleSubmit(e)}>
         <SearchInput
+          // onKeyPress={(event) => console.log(event)}
+          data-testid="input"
           type="text"
           placeholder="qual livro deseja buscar?"
           value={search}

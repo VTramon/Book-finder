@@ -1,11 +1,11 @@
-import { BookCardProps } from './interface'
+import { BookCardProps } from './types'
 import { Card, Img } from './styles'
 
 const BookCard: React.FC<BookCardProps> = (props) => {
   return (
     <>
       {props.book.volumeInfo.imageLinks ? (
-        <Card key={`${props.id}+card`} role="bookcard">
+        <Card data-testid="cardBook" key={`${props.id}+card`} role="bookcard">
           <Img
             key={`${props.id}+img`}
             src={props.book.volumeInfo.imageLinks.thumbnail}
