@@ -3,8 +3,6 @@ import styled from 'styled-components'
 export const Content = styled.main`
   display: flex;
   flex-direction: column;
-  max-width: 100vw;
-  max-height: 100vh;
   width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;

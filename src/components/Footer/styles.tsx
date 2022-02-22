@@ -5,7 +5,7 @@ export const FooterBar = styled.footer`
   justify-content: center;
   align-items: center;
   justify-content: space-evenly;
-  width: 100vw;
+  max-width: 100%;
   height: 100px;
   background-color: ${(props) => props.theme.colors.backgroundFooter};
   border-top: 1px solid #9e9e9e;

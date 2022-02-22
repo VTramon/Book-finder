@@ -4,8 +4,8 @@ export const Box = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 100%;
   height: 10vh;
-  width: 100vw;
   background-color: ${(props) => props.theme.colors.backgroundHeader};
   border-bottom: 1px solid #9e9e9e;
 `
