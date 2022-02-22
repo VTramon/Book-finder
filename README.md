@@ -6,8 +6,9 @@ um projeto simples que eu criei para colocar algumas coisas em prática
 
 ## como usar
 
-* instruções de download
+### Via GitHub
 
+* Download
 ```
 1. git clone https://github.com/VTramon/Book-finder.git
 ```
@@ -24,7 +25,20 @@ um projeto simples que eu criei para colocar algumas coisas em prática
 3. npm run dev
 ```
 
+### Via DockerHub
+
+* Download da imagem 
+
+```
+1. docker pull vtramon/book_finder
+```
+* Iniciar o container
+```
+2. docker run -d -p 3000:3000 vtramon/book_finder
+```
+
+
 ## Screenshots
 
-![alt text](ScreenShots/Layout.jpg)
-![alt text](ScreenShots/exemplo.jpg)
+![imagem da página](ScreenShots/book_finder.png)
+![outra imagem da página](ScreenShots/book_finder2.png)
